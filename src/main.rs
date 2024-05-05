@@ -1,19 +1,20 @@
 slint::include_modules!();
+mod squeek;
+mod users;
 
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
-
-    ui.on_request_increase_value({
-        let ui_handle = ui.as_weak();
+    
+    ui.on_test({
         move || {
-            let ui = ui_handle.unwrap();
-            ui.set_counter(ui.get_counter() + 1);
+            println!("HEY");
         }
     });
 
+
+
     ui.run()
 }
-
 
     
 /* let mut user = users::User{id:1, name:"Torbjørn", email:"torbjorn.stensrud@gmail.com", age:39, squeeks: vec![]};
