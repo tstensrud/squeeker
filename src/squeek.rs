@@ -40,8 +40,7 @@ pub struct Comment{
 
 impl Comment {
     pub fn get_comment(&self) -> String{
-        let output =format!( "ID: {} -- {}", self.id, &self.comment);
+        let output: String = format!( "ID: {} -- {}", self.id, &self.comment);
         output
-        
     }
 }
